@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="52dp"
+    android:paddingBottom="24dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_menu_compass"
+        android:padding="12dp"
+        android:backgroundTint="#2BFFFFFF"
+        app:tint="?attr/colorOnPrimary"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="VRPS icon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VRPS"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="22sp"
+        android:letterSpacing="0.04" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Vertical Parking System  v2.0"
+        android:fontFamily="sans-serif"
+        android:textColor="?attr/colorOnPrimary"
+        android:alpha="0.70"
+        android:textSize="12sp" />
+
+</LinearLayout>

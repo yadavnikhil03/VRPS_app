@@ -1,0 +1,67 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Vertical Rotary Parking</string>
+    
+    <!-- Dashboard -->
+    <string name="total_capacity">Total Capacity</string>
+    <string name="available_slots">Available Slots</string>
+    <string name="occupied_slots">Occupied Slots</string>
+    <string name="system_status">System Status: %1$s</string>
+    <string name="status_running">Running</string>
+    <string name="status_idle">Idle</string>
+    <string name="status_maintenance">Maintenance</string>
+    
+    <!-- Actions -->
+    <string name="action_park">Park Vehicle</string>
+    <string name="action_retrieve">Retrieve Vehicle</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_cancel">Cancel</string>
+    
+    <!-- Forms -->
+    <string name="vehicle_number_hint">Enter Vehicle Number</string>
+    <string name="slot_number_hint">Enter Slot Number</string>
+    <string name="auto_selected_slot">Auto-Selected Slot: %1$s</string>
+    <string name="waiting_time">Estimated Waiting Time: %1$s</string>
+    <string name="system_status_title">System Status</string>
+    <string name="status_operational">Operational</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_visualization">Visualization</string>
+    <string name="nav_control">Control</string>
+    <string name="nav_history">History</string>
+    
+    <!-- Control Panel -->
+    <string name="motor_controls">Motor Controls</string>
+    <string name="emergency_stop">EMERGENCY STOP</string>
+    <string name="diagnostics">System Diagnostics</string>
+    <string name="maintenance_mode">Maintenance Mode</string>
+    <string name="start_motor">Start</string>
+    <string name="stop_motor">Stop</string>
+    
+    <string name="drawer_home">Home</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_logout">Logout</string>
+    
+    <string name="theme_light">Light Mode</string>
+    <string name="theme_dark">Dark Mode</string>
+    <string name="theme_system">System Default</string>
+    
+    <string name="lang_en">English</string>
+    <string name="lang_hi">Hindi</string>
+    
+    <!-- Accessibility -->
+    <string name="nav_open">Open Navigation Drawer</string>
+    <string name="nav_close">Close Navigation Drawer</string>
+
+    <!-- Control Fragment New Strings -->
+    <string name="label_engineering_lock">ENGINEERING LOCK</string>
+    <string name="label_system_control">System Control</string>
+    <string name="label_main_rotor">MAIN ROTOR</string>
+    <string name="label_motor_status">Motor Status</string>
+    <string name="label_live_diagnostics">LIVE DIAGNOSTICS</string>
+    <string name="default_rpm_value">0.0</string>
+    <string name="label_rpm">RPM</string>
+    <string name="label_temp">TEMP</string>
+    <string name="default_temp_value">42°C</string>
+    <string name="label_load">LOAD</string>
+    <string name="default_load_value">65%</string>
+    <string name="label_core_shutdown">CORE SHUTDOWN</string>
+</resources>

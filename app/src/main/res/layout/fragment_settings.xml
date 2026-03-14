@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/android:windowBackground">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERFACE CONFIG"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="10sp"
+                android:letterSpacing="0.3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_settings"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="28sp"
+                android:textColor="?attr/colorOnBackground"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Theme Engine Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                style="@style/Widget.Material3.CardView.Filled"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VISUAL CORE"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/themeToggleGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:singleSelection="true"
+                        app:selectionRequired="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLightTheme"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="@string/theme_light"
+                            android:fontFamily="sans-serif" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnDarkTheme"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="@string/theme_dark"
+                            android:fontFamily="sans-serif" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSystemTheme"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="SYSTEM"
+                            android:fontFamily="sans-serif" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Language Array Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                style="@style/Widget.Material3.CardView.Elevated">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LINGUISTICS"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/languageToggleGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:singleSelection="true"
+                        app:selectionRequired="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLangEn"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="ENGLISH"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLangHi"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="HINDI / हिन्दी"
+                            android:fontFamily="sans-serif" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- System Info -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="VERTICAL ROTARY PARKING SYSTEM\nBUILD v2.0.4-BETA"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="8sp"
+                android:alpha="0.4"
+                android:letterSpacing="0.2" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
