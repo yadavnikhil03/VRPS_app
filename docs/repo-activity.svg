@@ -1,16 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260">
 <rect width="100%" height="100%" fill="#0f172a" rx="12"/>
 <text x="46" y="18" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Repo Commit Activity (Last 90 Days)</text>
-<text x="46" y="36" fill="#cbd5e1" opacity="0.75" font-family="Segoe UI, Arial, sans-serif" font-size="11">Total commits: 2</text>
+<text x="46" y="36" fill="#cbd5e1" opacity="0.75" font-family="Segoe UI, Arial, sans-serif" font-size="11">Total commits: 1</text>
 <line x1="46" y1="26" x2="960" y2="26" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="74" x2="960" y2="74" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="122" x2="960" y2="122" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="170" x2="960" y2="170" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="218" x2="960" y2="218" stroke="#334155" stroke-width="1" opacity="0.45"/>
-<rect x="896" y="28" width="8" height="190" fill="#14b8a6" rx="1"/>
-<rect x="936" y="28" width="8" height="190" fill="#14b8a6" rx="1"/>
+<rect x="906" y="28" width="8" height="190" fill="#14b8a6" rx="1"/>
 <text x="46" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Dec</text>
-<text x="176" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Jan</text>
-<text x="486" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Feb</text>
-<text x="766" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Mar</text>
+<text x="186" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Jan</text>
+<text x="496" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Feb</text>
+<text x="776" y="242" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Mar</text>
 </svg>
