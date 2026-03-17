@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="github_avatar_ring">#FFFFFF</color>
+    <color name="github_avatar_bg">#30FFFFFF</color>
+
+    <!-- Tower live slot map colors (night) -->
+    <color name="tower_slot_bg_moving">#1B5F59</color>
+    <color name="tower_slot_text_moving">#9DE9E4</color>
+    <color name="tower_slot_bg_occupied">#184A45</color>
+    <color name="tower_slot_text_occupied">#84E1BC</color>
+    <color name="tower_slot_bg_free">#1F2429</color>
+    <color name="tower_slot_text_free">#9CA3AF</color>
+</resources>

@@ -4,30 +4,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_theme_light_primary">
+    android:background="@drawable/splash_background">
 
-    <!-- Icon card -->
+    <LinearLayout
+        android:id="@+id/centerGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/logoCard"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        app:cardCornerRadius="28dp"
-        app:cardBackgroundColor="#2BFFFFFF"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/appNameText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_bias="0.40">
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        app:cardCornerRadius="32dp"
+        app:cardBackgroundColor="#33FFFFFF"
+        app:cardElevation="0dp">
 
         <ImageView
-            android:layout_width="52dp"
-            android:layout_height="52dp"
+            android:id="@+id/logoImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
-            android:src="@android:drawable/ic_menu_directions"
-            android:contentDescription="VRPS Logo"
-            app:tint="@color/white" />
+            android:src="@drawable/ic_brand_mark"
+            android:contentDescription="VRPS Logo" />
     </com.google.android.material.card.MaterialCardView>
 
     <!-- App name -->
@@ -35,43 +40,63 @@
         android:id="@+id/appNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/app_name"
+        android:layout_marginTop="22dp"
+        android:text="ParkFlow"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="32sp"
         android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.02"
-        app:layout_constraintBottom_toTopOf="@+id/taglineText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoCard" />
+        android:letterSpacing="0.03" />
 
     <!-- Tagline -->
     <TextView
         android:id="@+id/taglineText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Smart Vertical Parking System"
-        android:textColor="#BAFFFFFF"
+        android:layout_marginTop="8dp"
+        android:text="Secure vertical parking in seconds"
+        android:textColor="#D9FFFFFF"
         android:textSize="14sp"
-        android:fontFamily="sans-serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appNameText" />
+        android:fontFamily="sans-serif" />
 
-    <!-- Circular loader -->
-    <com.google.android.material.progressindicator.CircularProgressIndicator
+    <TextView
+        android:id="@+id/loadingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
-        android:indeterminate="true"
-        app:indicatorColor="@color/white"
-        app:trackColor="#33FFFFFF"
-        app:indicatorSize="36dp"
-        app:trackThickness="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="18dp"
+        android:text="Connecting secure parking network..."
+        android:textColor="#CCFFFFFF"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif" />
+
+    <LinearLayout
+        android:id="@+id/loaderDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/loaderDot1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_loader_dot" />
+
+        <View
+            android:id="@+id/loaderDot2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_loader_dot" />
+
+        <View
+            android:id="@+id/loaderDot3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_loader_dot" />
+    </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

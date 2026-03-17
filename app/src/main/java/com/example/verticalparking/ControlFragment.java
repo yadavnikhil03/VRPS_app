@@ -1,5 +1,7 @@
 package com.example.verticalparking;
 
+import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,25 +26,36 @@ public class ControlFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        
-        binding.motorSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                // Simulate start transition
-                binding.rpmProgress.setProgress(85, true);
-                binding.rpmValueText.setText("1250.0");
-                binding.tvTemp.setText("45°C");
-            } else {
-                binding.rpmProgress.setProgress(0, true);
-                binding.rpmValueText.setText("0.0");
-                binding.tvTemp.setText("32°C");
-            }
-        });
 
-        binding.btnEmergencyStop.setOnClickListener(v -> {
-            binding.motorSwitch.setChecked(false);
-            binding.rpmProgress.setProgress(0, true);
-            binding.rpmValueText.setText("0.0");
-        });
+        refreshVehicleStatus();
+
+        binding.btnStartParking.setOnClickListener(v ->
+            startActivity(new Intent(requireActivity(), ParkActivity.class))
+        );
+
+        binding.btnStartRetrieval.setOnClickListener(v ->
+            startActivity(new Intent(requireActivity(), RetrieveActivity.class))
+        );
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshVehicleStatus();
+    }
+
+    private void refreshVehicleStatus() {
+        SharedPreferences parkingPrefs = requireActivity().getSharedPreferences("ParkingSession", android.content.Context.MODE_PRIVATE);
+        boolean isParked = parkingPrefs.getBoolean("is_parked", false);
+        if (isParked) {
+            String plate = parkingPrefs.getString("plate", "Unknown");
+            String slot = parkingPrefs.getString("slot", "-");
+            binding.tvVehicleState.setText("Vehicle parked now");
+            binding.tvVehicleHint.setText("" + plate + " in slot " + slot + ". Use Retrieve when ready.");
+        } else {
+            binding.tvVehicleState.setText("No active parking session");
+            binding.tvVehicleHint.setText("Scan QR/RFID at kiosk to continue.");
+        }
     }
 
     @Override

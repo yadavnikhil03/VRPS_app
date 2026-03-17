@@ -3,19 +3,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/drawer_home"
-            android:icon="@android:drawable/ic_menu_today"
+            android:icon="@drawable/ic_nav_home"
             android:title="@string/drawer_home" />
         <item
             android:id="@+id/drawer_settings"
-            android:icon="@android:drawable/ic_menu_preferences"
+            android:icon="@drawable/ic_nav_settings"
             android:title="@string/drawer_settings" />
     </group>
-    <item android:title="System">
-        <menu>
-            <item
-                android:id="@+id/drawer_logout"
-                android:icon="@android:drawable/ic_lock_power_off"
-                android:title="@string/drawer_logout" />
-        </menu>
-    </item>
 </menu>

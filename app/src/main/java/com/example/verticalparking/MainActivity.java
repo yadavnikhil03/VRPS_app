@@ -1,7 +1,10 @@
 package com.example.verticalparking;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +16,7 @@ import android.content.Context;
 import androidx.appcompat.app.AppCompatDelegate;
 import android.content.SharedPreferences;
 import androidx.activity.OnBackPressedCallback;
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
             
             if (id == R.id.nav_dashboard) {
                 selectedFragment = new DashboardFragment();
-            } else if (id == R.id.nav_visualization) {
-                selectedFragment = new VisualizationFragment();
             } else if (id == R.id.nav_control) {
                 selectedFragment = new ControlFragment();
             } else if (id == R.id.nav_history) {
@@ -106,6 +108,19 @@ public class MainActivity extends AppCompatActivity {
             binding.drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
+
+        binding.getRoot().findViewById(R.id.githubFooter).setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.github_profile_url)));
+            startActivity(browserIntent);
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
+        });
+
+        ImageView githubAvatar = binding.getRoot().findViewById(R.id.ivGithubAvatar);
+        Glide.with(this)
+                .load(getString(R.string.github_avatar_url))
+                .placeholder(R.drawable.ic_github)
+                .error(R.drawable.ic_github)
+            .into(githubAvatar);
     }
 
     @Override

@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/android:windowBackground"
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -47,11 +46,42 @@
             android:id="@+id/instructionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter plate number or access code"
+            android:text="Enter plate number and verify with security PIN"
             android:textColor="?attr/colorOnSurfaceVariant"
             android:fontFamily="sans-serif"
             android:textSize="14sp"
             android:layout_marginBottom="14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScanRetrieveTag"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Use Demo Scan"
+            app:icon="@android:drawable/ic_menu_edit"
+            app:iconGravity="textStart"
+            app:cornerRadius="14dp"
+            android:layout_marginBottom="14dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/retrievePlateInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter plate number"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@android:drawable/ic_menu_send"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            android:layout_marginBottom="14dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRetrievePlate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Display -->
         <com.google.android.material.card.MaterialCardView
@@ -73,27 +103,36 @@
                 android:fontFamily="sans-serif-medium" />
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Keypad -->
-        <GridLayout
-            android:id="@+id/keypadGrid"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pinInputLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:useDefaultMargins="true">
+            android:hint="Enter 4-digit owner PIN"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@android:drawable/ic_lock_lock"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            android:layout_marginBottom="16dp">
 
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="1" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="2" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="3" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="4" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="5" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="6" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="7" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="8" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="9" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" app:icon="@android:drawable/ic_menu_close_clear_cancel" app:iconSize="28dp" style="@style/Widget.Material3.Button.OutlinedButton" app:iconTint="?attr/colorError" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" android:text="0" style="@style/Widget.Material3.Button.OutlinedButton" android:textSize="26sp" android:fontFamily="sans-serif-medium" app:cornerRadius="14dp" />
-            <com.google.android.material.button.MaterialButton android:layout_width="88dp" android:layout_height="80dp" app:icon="@android:drawable/ic_menu_send" app:iconSize="28dp" style="@style/Widget.Material3.Button.OutlinedButton" app:iconTint="?attr/colorSecondary" app:cornerRadius="14dp" />
-        </GridLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSecurityPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:maxLength="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvRetrieveState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waiting for scan"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
 
     </LinearLayout>
 

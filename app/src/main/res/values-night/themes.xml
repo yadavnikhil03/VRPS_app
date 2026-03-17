@@ -15,12 +15,13 @@
         <item name="colorOnError">@color/md_theme_dark_onError</item>
         
         <item name="android:windowBackground">@color/md_theme_dark_background</item>
-        <item name="android:statusBarColor">#202124</item>
+        <item name="android:statusBarColor">#121416</item>
+        <item name="android:navigationBarColor">#121416</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.VerticalParking.Splash" parent="Theme.VerticalParking">
-        <item name="android:windowBackground">@color/md_theme_dark_primary</item>
-        <item name="android:statusBarColor">@color/md_theme_dark_primary</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">#0F766E</item>
     </style>
 </resources>

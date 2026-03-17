@@ -2,9 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorPrimary"
+    tools:ignore="Overdraw"
     android:orientation="vertical"
     android:gravity="bottom"
     android:paddingStart="24dp"
@@ -15,10 +17,9 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:src="@android:drawable/ic_menu_compass"
-        android:padding="12dp"
+        android:src="@drawable/ic_brand_mark"
+        android:padding="10dp"
         android:backgroundTint="#2BFFFFFF"
-        app:tint="?attr/colorOnPrimary"
         app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent"
         android:layout_marginBottom="20dp"
         android:contentDescription="VRPS icon" />
@@ -26,7 +27,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="VRPS"
+        android:text="ParkFlow"
         android:fontFamily="sans-serif-medium"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="22sp"
@@ -36,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:text="Vertical Parking System  v2.0"
+        android:text="AI-assisted smart parking"
         android:fontFamily="sans-serif"
         android:textColor="?attr/colorOnPrimary"
         android:alpha="0.70"

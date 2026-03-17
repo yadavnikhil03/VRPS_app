@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/android:windowBackground"
     android:fitsSystemWindows="true">
 
     <androidx.core.widget.NestedScrollView
@@ -17,33 +16,28 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Header -->
             <TextView
-                android:id="@+id/tv_eng_lock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_engineering_lock"
+                android:text="MY VEHICLE"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="11sp"
                 android:letterSpacing="0.15" />
 
             <TextView
-                android:id="@+id/tv_sys_control"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_system_control"
+                android:text="My Vehicle"
                 android:fontFamily="sans-serif-medium"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textColor="?attr/colorOnBackground"
-                android:layout_marginBottom="28dp" />
+                android:layout_marginBottom="24dp" />
 
-            <!-- Motor toggle card -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_motor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
                 style="@style/Widget.Material3.CardView.Filled">
@@ -51,202 +45,114 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:src="@android:drawable/ic_menu_compass"
-                        android:padding="10dp"
-                        android:backgroundTint="?attr/colorPrimaryContainer"
-                        app:tint="?attr/colorPrimary"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent"
-                        android:contentDescription="Motor icon" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="16dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/label_main_rotor"
-                            android:fontFamily="sans-serif-medium"
-                            android:textSize="15sp"
-                            android:textColor="?attr/colorOnSurface" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/label_motor_status"
-                            android:fontFamily="sans-serif"
-                            android:textSize="13sp"
-                            android:textColor="?attr/colorOnSurfaceVariant" />
-                    </LinearLayout>
-
-                    <com.google.android.material.materialswitch.MaterialSwitch
-                        android:id="@+id/motorSwitch"
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="Current status"
+                        android:fontFamily="sans-serif"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/tvVehicleState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="No active parking session"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="20sp"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <TextView
+                        android:id="@+id/tvVehicleHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Scan QR/RFID at kiosk to continue."
+                        android:fontFamily="sans-serif"
+                        android:textSize="13sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Diagnostics gauge card -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_diagnostics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp">
+                app:cardElevation="0dp"
+                style="@style/Widget.Material3.CardView.Outlined">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="24dp"
-                    android:gravity="center_horizontal">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/label_live_diagnostics"
+                        android:text="What to do"
                         android:fontFamily="sans-serif-medium"
-                        android:textSize="13sp"
-                        android:textColor="?attr/colorOnSurface"
-                        android:layout_marginBottom="24dp" />
+                        android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface" />
 
-                    <!-- RPM gauge -->
-                    <FrameLayout
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:layout_gravity="center">
-
-                        <com.google.android.material.progressindicator.CircularProgressIndicator
-                            android:id="@+id/rpmProgress"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:progress="0"
-                            android:layout_gravity="center"
-                            app:indicatorSize="188dp"
-                            app:trackThickness="14dp"
-                            app:indicatorColor="?attr/colorPrimary"
-                            app:trackColor="?attr/colorSurfaceVariant"
-                            app:trackCornerRadius="8dp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/rpmValueText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/default_rpm_value"
-                                android:fontFamily="sans-serif-medium"
-                                android:textSize="34sp"
-                                android:textColor="?attr/colorOnSurface" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/label_rpm"
-                                android:fontFamily="sans-serif"
-                                android:textSize="12sp"
-                                android:alpha="0.55"
-                                android:textColor="?attr/colorOnSurface" />
-                        </LinearLayout>
-                    </FrameLayout>
-
-                    <!-- Temp / Load row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="10dp"
+                        android:text="1. Scan at the tower."
+                        android:fontFamily="sans-serif"
+                        android:textSize="13sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="2. Vehicle and slot are auto-detected."
+                        android:fontFamily="sans-serif"
+                        android:textSize="13sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/label_temp"
-                                android:fontFamily="sans-serif"
-                                android:textSize="11sp"
-                                android:textColor="?attr/colorOnSurfaceVariant" />
-
-                            <TextView
-                                android:id="@+id/tv_temp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/default_temp_value"
-                                android:fontFamily="sans-serif-medium"
-                                android:textSize="22sp"
-                                android:textColor="@color/status_amber" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="40dp"
-                            android:background="?attr/colorOutlineVariant" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/label_load"
-                                android:fontFamily="sans-serif"
-                                android:textSize="11sp"
-                                android:textColor="?attr/colorOnSurfaceVariant" />
-
-                            <TextView
-                                android:id="@+id/tv_load"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/default_load_value"
-                                android:fontFamily="sans-serif-medium"
-                                android:textSize="22sp"
-                                android:textColor="?attr/colorSecondary" />
-                        </LinearLayout>
-                    </LinearLayout>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="3. Use PIN to retrieve securely."
+                        android:fontFamily="sans-serif"
+                        android:textSize="13sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Emergency stop -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnEmergencyStop"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="72dp"
-                android:layout_marginTop="28dp"
-                android:text="@string/label_core_shutdown"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="16sp"
-                android:letterSpacing="0.04"
-                app:cornerRadius="18dp"
-                android:backgroundTint="?attr/colorError"
-                android:textColor="?attr/colorOnError"
-                app:icon="@android:drawable/ic_dialog_alert"
-                app:iconGravity="textStart"
-                app:iconSize="22dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartParking"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Park Now"
+                    app:cornerRadius="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartRetrieval"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Retrieve"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
