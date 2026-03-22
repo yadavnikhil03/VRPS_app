@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_dashboard_ambient"
+    android:background="?attr/colorSurface"
     tools:context=".DashboardFragment">
 
     <ScrollView
@@ -18,204 +18,140 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp"
-            android:paddingTop="24dp"
-            android:paddingBottom="32dp">
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="48dp">
 
-            <!-- Modern Hero Section -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardHero"
+            <!-- Title & System Status Header -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="28dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="?attr/colorSurface"
-                app:strokeWidth="1dp"
-                app:strokeColor="?attr/colorOutlineVariant">
-
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="32dp">
+                
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="28dp">
+                    android:orientation="vertical">
 
-                    <!-- Header Text -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginBottom="20dp">
+                        android:text="CONTROL CENTER"
+                        android:fontFamily="@font/orbitron"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Parking System"
-                            android:textColor="?attr/colorPrimary"
-                            android:textSize="13sp"
-                            android:fontFamily="sans-serif-medium" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="4dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Autonomous Vertical"
-                            android:textColor="?attr/colorOnSurface"
-                            android:textSize="30sp"
-                            android:fontFamily="sans-serif-black"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Simple, fast and reliable parking"
-                            android:textColor="?attr/colorOnSurfaceVariant"
-                            android:textSize="14sp"
-                            android:layout_marginTop="4dp" />
+                        <View
+                            android:id="@+id/pulseStatusDot"
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:background="@drawable/status_indicator"
+                            android:layout_marginEnd="6dp" />
 
                         <TextView
                             android:id="@+id/tvRealtimeMode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="Live sync off"
-                            android:textColor="?attr/colorPrimary"
+                            android:text="LIVE MANAGER ONLINE"
+                            android:fontFamily="@font/rajdhani"
+                            android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="12sp"
-                            android:fontFamily="sans-serif-medium" />
+                            android:letterSpacing="0.05" />
                     </LinearLayout>
-
-                    <!-- Slot Availability Section -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="0dp"
-                        app:cardBackgroundColor="?attr/colorPrimaryContainer">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:padding="16dp">
-
-                            <!-- Left: Slots Info -->
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Available Spots"
-                                    android:textColor="?attr/colorOnPrimaryContainer"
-                                    android:textSize="13sp" />
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:baselineAligned="false"
-                                    android:gravity="center_vertical"
-                                    android:layout_marginTop="8dp">
-
-                                    <TextView
-                                        android:id="@+id/tv_available_slots"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="14"
-                                        android:textColor="?attr/colorOnPrimaryContainer"
-                                        android:textSize="42sp"
-                                        android:fontFamily="sans-serif-black"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:id="@+id/tvTotalSlots"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="/ 20"
-                                        android:textColor="?attr/colorOnPrimaryContainer"
-                                        android:alpha="0.75"
-                                        android:textSize="18sp"
-                                        android:layout_marginStart="8dp"
-                                        android:gravity="bottom"
-                                        android:layout_marginBottom="8dp" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                            <!-- Right: Status Badge -->
-                            <FrameLayout
-                                android:layout_width="84dp"
-                                android:layout_height="84dp"
-                                android:layout_marginStart="16dp">
-
-                                <FrameLayout
-                                    android:layout_width="72dp"
-                                    android:layout_height="72dp"
-                                    android:layout_gravity="center"
-                                    android:background="@drawable/bg_circle_stats">
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical"
-                                        android:gravity="center">
-
-                                        <TextView
-                                            android:id="@+id/tvHeroPercent"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="70%"
-                                            android:textColor="?attr/colorPrimary"
-                                            android:textSize="20sp"
-                                            android:fontFamily="sans-serif-black"
-                                            android:textStyle="bold" />
-
-                                        <TextView
-                                            android:id="@+id/systemStatusText"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="READY"
-                                            android:textColor="?attr/colorOnSurfaceVariant"
-                                            android:textSize="10sp"
-                                            android:fontFamily="sans-serif-medium" />
-                                    </LinearLayout>
-                                </FrameLayout>
-                            </FrameLayout>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
+            </LinearLayout>
+
+            <!-- Hero Status Card (Bold Primary Theme) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorPrimary">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="32dp">
+
+                    <TextView
+                        android:id="@+id/lblAvailable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AVAILABLE PARKING"
+                        android:fontFamily="@font/rajdhani"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:alpha="0.8"
+                        android:textSize="14sp"
+                        android:letterSpacing="0.1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tv_available_slots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="64sp"
+                        android:fontFamily="@font/orbitron"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        app:layout_constraintTop_toBottomOf="@id/lblAvailable"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTotalSlots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/ 20 SLOTS"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/rajdhani"
+                        android:alpha="0.8"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_available_slots"
+                        app:layout_constraintStart_toEndOf="@id/tv_available_slots"
+                        android:layout_marginStart="8dp" />
+
+                    <!-- Utilization Text replacing complex progress circle to keep it cleaner -->
+                    <TextView
+                        android:id="@+id/systemStatusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30% FULL"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/orbitron"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Section Divider -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?attr/colorSurfaceVariant"
-                android:alpha="0.2"
-                android:layout_marginVertical="28dp" />
-
-            <!-- Quick Actions Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quick Actions"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Park & Retrieve Buttons -->
+            <!-- Action Buttons Row -->
             <LinearLayout
                 android:id="@+id/rowQuickActions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="28dp">
+                android:layout_marginBottom="24dp">
 
                 <!-- Park Button -->
                 <com.google.android.material.card.MaterialCardView
@@ -223,62 +159,9 @@
                     android:layout_width="0dp"
                     android:layout_height="160dp"
                     android:layout_weight="1"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginEnd="8dp"
                     app:cardCornerRadius="24dp"
-                    app:cardElevation="3dp"
-                    app:cardBackgroundColor="?attr/colorSecondaryContainer"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="20dp"
-                        android:gravity="center"
-                        android:background="?attr/colorSurface">
-
-                        <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:src="@drawable/ic_park_vehicle"
-                            android:scaleType="centerInside"
-                            android:contentDescription="Park Vehicle"
-                            app:tint="?attr/colorPrimary"
-                            android:layout_marginBottom="12dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Park Vehicle"
-                            android:textColor="?attr/colorOnSurface"
-                            android:fontFamily="sans-serif-black"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:gravity="center" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Submit + verify"
-                            android:textColor="?attr/colorOnSurfaceVariant"
-                            android:textSize="12sp"
-                            android:gravity="center"
-                            android:layout_marginTop="4dp"
-                            android:alpha="0.7" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Retrieve Button -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnRetrieveLarge"
-                    android:layout_width="0dp"
-                    android:layout_height="160dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="3dp"
+                    app:cardElevation="0dp"
                     app:cardBackgroundColor="?attr/colorPrimaryContainer"
                     android:clickable="true"
                     android:focusable="true"
@@ -288,157 +171,92 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:padding="20dp"
-                        android:gravity="center"
-                        android:background="?attr/colorSurface">
+                        android:padding="24dp"
+                        android:gravity="center">
 
                         <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:src="@drawable/ic_retrieve_vehicle"
-                            android:scaleType="centerInside"
-                            android:contentDescription="Retrieve Vehicle"
-                            app:tint="?attr/colorPrimary"
-                            android:layout_marginBottom="12dp" />
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_park_vehicle"
+                            app:tint="?attr/colorOnPrimaryContainer"
+                            android:layout_marginBottom="16dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Retrieve"
-                            android:textColor="?attr/colorOnSurface"
-                            android:fontFamily="sans-serif-black"
+                            android:text="PARK"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:fontFamily="@font/orbitron"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:gravity="center" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Retrieve Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnRetrieveLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="?attr/colorSecondaryContainer"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="24dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_retrieve_vehicle"
+                            app:tint="?attr/colorOnSecondaryContainer"
+                            android:layout_marginBottom="16dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Unlock + exit"
-                            android:textColor="?attr/colorOnSurfaceVariant"
-                            android:textSize="12sp"
-                            android:gravity="center"
-                            android:layout_marginTop="4dp"
-                            android:alpha="0.7" />
+                            android:text="RETRIEVE"
+                            android:textColor="?attr/colorOnSecondaryContainer"
+                            android:fontFamily="@font/orbitron"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-            <!-- Info Cards Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="System Info"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-black"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Utilization Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardUtilization"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="1dp"
-                app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                app:strokeWidth="1dp"
-                app:strokeColor="?attr/colorOutline">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
-
-                    <FrameLayout
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/bg_circle_stats"
-                        android:layout_marginEnd="16dp">
-
-                        <TextView
-                            android:id="@+id/tvUtilPercent"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="30%"
-                            android:textColor="?attr/colorPrimary"
-                            android:textSize="14sp"
-                            android:fontFamily="sans-serif-black"
-                            android:textStyle="bold"
-                            android:gravity="center" />
-                    </FrameLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="System Utilization"
-                            android:textColor="?attr/colorOnSurface"
-                            android:fontFamily="sans-serif-medium"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/tvUtilSubtitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="6 vehicles parked"
-                            android:textColor="?attr/colorOnSurfaceVariant"
-                            android:textSize="12sp"
-                            android:layout_marginTop="2dp"
-                            android:alpha="0.7" />
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@android:drawable/ic_menu_info_details"
-                        app:tint="?attr/colorOnSurfaceVariant"
-                        android:contentDescription="Info" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Operational Status Card -->
+            <!-- Minimal System Status Card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardOperational"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="1dp"
-                app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                app:strokeWidth="1dp"
-                app:strokeColor="?attr/colorOutline">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20dp"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="16dp"
                     android:gravity="center_vertical">
 
-                    <FrameLayout
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@drawable/bg_circle_success"
-                        android:layout_marginEnd="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="✓"
-                            android:textColor="@android:color/white"
-                            android:textSize="24sp"
-                            android:fontFamily="sans-serif-black" />
-                    </FrameLayout>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_system_check"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="16dp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -449,29 +267,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="System Status"
-                            android:textColor="?attr/colorOnSurface"
-                            android:fontFamily="sans-serif-medium"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/tvOpsDetail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="All systems operational"
+                            android:text="All Systems Optimal"
                             android:textColor="?attr/colorOnSurfaceVariant"
-                            android:textSize="12sp"
-                            android:layout_marginTop="2dp"
-                            android:alpha="0.7" />
+                            android:fontFamily="@font/rajdhani"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
                     </LinearLayout>
-
-                    <View
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:background="@drawable/shape_status_dot"
-                        android:layout_marginEnd="8dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

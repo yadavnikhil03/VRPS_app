@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="github_avatar_ring">#FFFFFF</color>
-    <color name="github_avatar_bg">#30FFFFFF</color>
+    <!-- True Google Material 3 Dark -->
+    <color name="md_theme_primary">#A8C7FA</color>
+    <color name="md_theme_onPrimary">#062E6F</color>
+    <color name="md_theme_primaryContainer">#0842A0</color>
+    <color name="md_theme_onPrimaryContainer">#D3E3FD</color>
+    <color name="md_theme_secondary">#C4C7C5</color>
+    <color name="md_theme_onSecondary">#2E3130</color>
+    <color name="md_theme_secondaryContainer">#444746</color>
+    <color name="md_theme_onSecondaryContainer">#E3E3E3</color>
+    <color name="md_theme_error">#F2B8B5</color>
+    <color name="md_theme_onError">#601410</color>
+    <color name="md_theme_background">#1F1F1F</color>
+    <color name="md_theme_onBackground">#E3E3E3</color>
+    <color name="md_theme_surface">#1F1F1F</color>
+    <color name="md_theme_onSurface">#E3E3E3</color>
+    <color name="md_theme_surfaceVariant">#444746</color>
+    <color name="md_theme_onSurfaceVariant">#C4C7C5</color>
 
-    <!-- Tower live slot map colors (night) -->
-    <color name="tower_slot_bg_moving">#1B5F59</color>
-    <color name="tower_slot_text_moving">#9DE9E4</color>
-    <color name="tower_slot_bg_occupied">#184A45</color>
-    <color name="tower_slot_text_occupied">#84E1BC</color>
-    <color name="tower_slot_bg_free">#1F2429</color>
-    <color name="tower_slot_text_free">#9CA3AF</color>
+    <!-- Legacy / Manual Mappings -->
+    <color name="kinetic_primary">@color/md_theme_primary</color>
+    <color name="kinetic_secondary">@color/md_theme_secondary</color>
+    <color name="kinetic_error">@color/md_theme_error</color>
 </resources>

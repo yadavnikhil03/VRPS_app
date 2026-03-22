@@ -1,48 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--  Light palette  -->
-    <color name="md_theme_light_primary">#0F766E</color>
-    <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#DDF6F4</color>
-    <color name="md_theme_light_onPrimaryContainer">#0A4C46</color>
+    <!-- True Google Material 3 Light (Pure White Baseline) -->
+    <color name="md_theme_primary">#0A56D0</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#D3E3FD</color>
+    <color name="md_theme_onPrimaryContainer">#041E49</color>
+    <color name="md_theme_secondary">#5E5E5E</color>
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+    <color name="md_theme_secondaryContainer">#E2E2E2</color>
+    <color name="md_theme_onSecondaryContainer">#1F1F1F</color>
+    <color name="md_theme_error">#B3261E</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_background">#FFFFFF</color>
+    <color name="md_theme_onBackground">#1F1F1F</color>
+    <color name="md_theme_surface">#FFFFFF</color>
+    <color name="md_theme_onSurface">#1F1F1F</color>
+    <color name="md_theme_surfaceVariant">#F1F3F4</color>
+    <color name="md_theme_onSurfaceVariant">#444746</color>
 
-    <color name="md_theme_light_secondary">#0B8C84</color>
-    <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#E7FAF8</color>
-    <color name="md_theme_light_onSecondaryContainer">#0E5D57</color>
+    <!-- Legacy / Manual Mappings -->
+    <color name="status_green">#2ECC71</color>
+    <color name="github_avatar_ring">#BDBDBD</color>
+    <color name="github_avatar_bg">#E0E0E0</color>
+    <color name="kinetic_primary">@color/md_theme_primary</color>
+    <color name="kinetic_secondary">@color/md_theme_secondary</color>
+    <color name="kinetic_error">@color/md_theme_error</color>
 
-    <color name="md_theme_light_error">#DC2626</color>
-    <color name="md_theme_light_onError">#FFFFFF</color>
-
-    <color name="md_theme_light_background">#F5FAFA</color>
-
-    <!--  Dark palette  -->
-    <color name="md_theme_dark_primary">#7AD7D1</color>
-    <color name="md_theme_dark_onPrimary">#053A36</color>
-    <color name="md_theme_dark_primaryContainer">#095D57</color>
-    <color name="md_theme_dark_onPrimaryContainer">#D5F7F4</color>
-
-    <color name="md_theme_dark_secondary">#98E3DD</color>
-    <color name="md_theme_dark_onSecondary">#084642</color>
-    <color name="md_theme_dark_secondaryContainer">#0C5A54</color>
-    <color name="md_theme_dark_onSecondaryContainer">#D9F8F5</color>
-
-    <color name="md_theme_dark_error">#FCA5A5</color>
-    <color name="md_theme_dark_onError">#7F1D1D</color>
-
-    <color name="md_theme_dark_background">#121416</color>
-
-    <!--  Utility  -->
+    <color name="tower_slot_bg_moving">#7F8C8D</color>
+    <color name="tower_slot_text_moving">#FFFFFF</color>
+    <color name="tower_slot_bg_occupied">#E74C3C</color>
+    <color name="tower_slot_text_occupied">#FFFFFF</color>
+    <color name="tower_slot_bg_free">#2ECC71</color>
+    <color name="tower_slot_text_free">#FFFFFF</color>
+    
     <color name="white">#FFFFFF</color>
-    <color name="status_green">#16A34A</color>
-    <color name="github_avatar_ring">#F5FAFF</color>
-    <color name="github_avatar_bg">#26FFFFFF</color>
-
-    <!-- Tower live slot map colors (light) -->
-    <color name="tower_slot_bg_moving">#DDF6F4</color>
-    <color name="tower_slot_text_moving">#0F766E</color>
-    <color name="tower_slot_bg_occupied">#E7FAF8</color>
-    <color name="tower_slot_text_occupied">#16A34A</color>
-    <color name="tower_slot_bg_free">#00000000</color>
-    <color name="tower_slot_text_free">#6B7280</color>
 </resources>

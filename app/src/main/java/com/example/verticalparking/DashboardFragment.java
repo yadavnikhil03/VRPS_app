@@ -114,38 +114,24 @@ public class DashboardFragment extends Fragment {
         int occupied = total - available;
         int utilizationPercent = (occupied * 100) / Math.max(total, 1);
 
-        binding.tvTotalSlots.setText("/ " + total);
+        binding.tvTotalSlots.setText("/ " + total + " TOTAL");
 
         if (animate) {
             animateNumber(binding.tvAvailableSlots, lastAnimatedAvailable < 0 ? available : lastAnimatedAvailable, available, "");
-            animateNumber(binding.tvHeroPercent, lastAnimatedUtilization < 0 ? utilizationPercent : lastAnimatedUtilization, utilizationPercent, "%");
-            animateNumber(binding.tvUtilPercent, lastAnimatedUtilization < 0 ? utilizationPercent : lastAnimatedUtilization, utilizationPercent, "%");
+            animateNumber(binding.systemStatusText, lastAnimatedUtilization < 0 ? utilizationPercent : lastAnimatedUtilization, utilizationPercent, "% FULL");
         } else {
             binding.tvAvailableSlots.setText(String.valueOf(available));
-            binding.tvHeroPercent.setText(utilizationPercent + "%");
-            binding.tvUtilPercent.setText(utilizationPercent + "%");
+            binding.systemStatusText.setText(utilizationPercent + "% FULL");
         }
 
         lastAnimatedAvailable = available;
         lastAnimatedUtilization = utilizationPercent;
 
-        binding.systemStatusText.setText(available > 0 ? "READY" : "FULL");
-        binding.tvUtilSubtitle.setText(getString(R.string.utilization_subtitle_format, occupied));
-
         if (fromCache) {
-            String normalized = realtimeStatus == null ? "" : realtimeStatus.trim();
-            if (!normalized.isEmpty()) {
-                binding.tvOpsDetail.setText(normalized);
-            } else {
-                binding.tvOpsDetail.setText(getString(R.string.live_sync_cached_data));
-            }
             binding.tvRealtimeMode.setText(getString(R.string.live_sync_cached_age, toRelativeAge(cacheAgeMs)));
         } else if (realtimeOnline) {
-            String normalized = realtimeStatus == null ? "" : realtimeStatus.trim();
-            binding.tvOpsDetail.setText(normalized.isEmpty() ? getString(R.string.live_sync_connected) : normalized);
             binding.tvRealtimeMode.setText(getString(R.string.live_sync_connected));
         } else {
-            binding.tvOpsDetail.setText(getString(R.string.live_sync_no_cache));
             binding.tvRealtimeMode.setText(getString(R.string.live_sync_offline));
         }
     }
@@ -251,7 +237,6 @@ public class DashboardFragment extends Fragment {
 
         persistDiagnostics("offline", consecutiveRealtimeFailures, 0L);
         binding.tvRealtimeMode.setText(getString(R.string.live_sync_offline));
-        binding.tvOpsDetail.setText(getString(R.string.live_sync_no_cache));
         updateSystemStats(false);
     }
 
@@ -348,8 +333,7 @@ public class DashboardFragment extends Fragment {
     private void runPremiumEntranceAnimations() {
         animateCard(binding.cardHero, 0);
         animateCard(binding.rowQuickActions, 90);
-        animateCard(binding.cardUtilization, 160);
-        animateCard(binding.cardOperational, 220);
+        animateCard(binding.cardOperational, 160);
     }
 
     private void setupPremiumInteractions() {
@@ -386,6 +370,15 @@ public class DashboardFragment extends Fragment {
         animator.addUpdateListener(valueAnimator -> {
             int value = (int) valueAnimator.getAnimatedValue();
             target.setText(String.format(Locale.getDefault(), "%d%s", value, suffix));
+        });
+        animator.start();
+    }
+
+    private void animateProgress(android.widget.ProgressBar target, int start, int end) {
+        ValueAnimator animator = ValueAnimator.ofInt(start, end);
+        animator.setDuration(360);
+        animator.addUpdateListener(valueAnimator -> {
+            target.setProgress((int) valueAnimator.getAnimatedValue());
         });
         animator.start();
     }

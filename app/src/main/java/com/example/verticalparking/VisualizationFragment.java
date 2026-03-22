@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.verticalparking.databinding.FragmentVisualizationBinding;
+import com.example.verticalparking.database.AppDatabase;
+import com.example.verticalparking.database.UserVehicle;
 import com.example.verticalparking.R;
 
 import java.util.ArrayList;
@@ -112,41 +114,48 @@ public class VisualizationFragment extends Fragment {
 
         SharedPreferences settingsPrefs = requireActivity().getSharedPreferences(SETTINGS_PREFS, Context.MODE_PRIVATE);
         boolean realtimeEnabled = settingsPrefs.getBoolean(KEY_REALTIME_ENABLED, false);
-        if (!realtimeEnabled) {
-            renderFromLocalState(false, getString(R.string.tower_source_sync_off));
-            scheduleNextRefresh();
-            return;
-        }
-
-        String espHost = settingsPrefs.getString(KEY_ESP_HOST, "192.168.4.1");
-        String espPath = settingsPrefs.getString(KEY_ESP_PATH, "/status");
-
+        
         pollExecutor.execute(() -> {
+            List<UserVehicle> dbVehicles = AppDatabase.getInstance(requireContext()).userVehicleDao().getAllParked();
+            
+            if (!realtimeEnabled) {
+                requireActivity().runOnUiThread(() -> {
+                    if (binding != null) {
+                        int available = clamp(requireActivity().getSharedPreferences(PARKING_SESSION_PREFS, Context.MODE_PRIVATE)
+                                .getInt(KEY_AVAILABLE_SLOTS, DEFAULT_TOTAL_SLOTS), 0, DEFAULT_TOTAL_SLOTS);
+                        renderTowerState(available, DEFAULT_TOTAL_SLOTS, false, getString(R.string.tower_source_sync_off), dbVehicles);
+                    }
+                });
+                scheduleNextRefresh();
+                return;
+            }
+
+            String espHost = settingsPrefs.getString(KEY_ESP_HOST, "192.168.4.1");
+            String espPath = settingsPrefs.getString(KEY_ESP_PATH, "/status");
+
             try {
                 EspRealtimeClient.RealtimeStatus status = EspRealtimeClient.fetchStatus(espHost, espPath);
-                if (!isAdded()) {
-                    return;
-                }
+                if (!isAdded()) return;
+                
                 int total = status.totalSlots <= 0 ? DEFAULT_TOTAL_SLOTS : status.totalSlots;
                 int available = clamp(status.availableSlots, 0, total);
+                
                 SharedPreferences parkingPrefs = requireActivity().getSharedPreferences(PARKING_SESSION_PREFS, Context.MODE_PRIVATE);
                 parkingPrefs.edit().putInt(KEY_AVAILABLE_SLOTS, available).apply();
 
                 requireActivity().runOnUiThread(() -> {
-                    if (binding == null) {
-                        return;
+                    if (binding != null) {
+                        renderTowerState(available, total, true, getString(R.string.tower_source_live), dbVehicles);
                     }
-                    renderTowerState(available, total, true, getString(R.string.tower_source_live));
                 });
             } catch (Exception ignored) {
-                if (!isAdded()) {
-                    return;
-                }
+                if (!isAdded()) return;
                 requireActivity().runOnUiThread(() -> {
-                    if (binding == null) {
-                        return;
+                    if (binding != null) {
+                        int available = clamp(requireActivity().getSharedPreferences(PARKING_SESSION_PREFS, Context.MODE_PRIVATE)
+                                .getInt(KEY_AVAILABLE_SLOTS, DEFAULT_TOTAL_SLOTS), 0, DEFAULT_TOTAL_SLOTS);
+                        renderTowerState(available, DEFAULT_TOTAL_SLOTS, false, getString(R.string.tower_source_cached), dbVehicles);
                     }
-                    renderFromLocalState(false, getString(R.string.tower_source_cached));
                 });
             } finally {
                 scheduleNextRefresh();
@@ -155,12 +164,18 @@ public class VisualizationFragment extends Fragment {
     }
 
     private void renderFromLocalState(boolean online, String sourceText) {
-        SharedPreferences parkingPrefs = requireActivity().getSharedPreferences(PARKING_SESSION_PREFS, Context.MODE_PRIVATE);
-        int available = clamp(parkingPrefs.getInt(KEY_AVAILABLE_SLOTS, DEFAULT_TOTAL_SLOTS), 0, DEFAULT_TOTAL_SLOTS);
-        renderTowerState(available, DEFAULT_TOTAL_SLOTS, online, sourceText);
+        pollExecutor.execute(() -> {
+            List<UserVehicle> dbVehicles = AppDatabase.getInstance(requireContext()).userVehicleDao().getAllParked();
+            requireActivity().runOnUiThread(() -> {
+                if (binding == null) return;
+                SharedPreferences parkingPrefs = requireActivity().getSharedPreferences(PARKING_SESSION_PREFS, Context.MODE_PRIVATE);
+                int available = clamp(parkingPrefs.getInt(KEY_AVAILABLE_SLOTS, DEFAULT_TOTAL_SLOTS), 0, DEFAULT_TOTAL_SLOTS);
+                renderTowerState(available, DEFAULT_TOTAL_SLOTS, online, sourceText, dbVehicles);
+            });
+        });
     }
 
-    private void renderTowerState(int available, int total, boolean online, String sourceText) {
+    private void renderTowerState(int available, int total, boolean online, String sourceText, List<UserVehicle> dbVehicles) {
         int occupied = Math.max(0, total - available);
         binding.visSubtitle.setText(getString(R.string.tower_summary_format, available, total));
         binding.activePlatformLabel.setText(resolveActivePlatformLabel(occupied));
@@ -171,11 +186,24 @@ public class VisualizationFragment extends Fragment {
 
         List<SlotCellModel> cells = new ArrayList<>();
         int movingIndex = occupied > 0 ? occupied - 1 : -1;
+        
         for (int i = 0; i < total; i++) {
+            int currentSlotNum = i + 1;
             boolean isOccupied = i < occupied;
             boolean isMoving = i == movingIndex && occupied > 0;
-            String label = getString(R.string.tower_slot_label, i + 1);
-            cells.add(new SlotCellModel(label, isOccupied, isMoving));
+            String label = getString(R.string.tower_slot_label, currentSlotNum);
+            
+            // Check Database mappings
+            String userPlate = null;
+            for (UserVehicle dbv : dbVehicles) {
+                if (dbv.getSlotNumber() == currentSlotNum && dbv.isParked()) {
+                    userPlate = dbv.getLicensePlate();
+                    isOccupied = true; 
+                    break;
+                }
+            }
+            
+            cells.add(new SlotCellModel(label, isOccupied, isMoving, userPlate));
         }
         slotMapAdapter.submit(cells);
     }
@@ -212,11 +240,13 @@ public class VisualizationFragment extends Fragment {
         final String label;
         final boolean occupied;
         final boolean moving;
+        final String assignedPlate;
 
-        SlotCellModel(String label, boolean occupied, boolean moving) {
+        SlotCellModel(String label, boolean occupied, boolean moving, String assignedPlate) {
             this.label = label;
             this.occupied = occupied;
             this.moving = moving;
+            this.assignedPlate = assignedPlate;
         }
     }
 
@@ -260,7 +290,13 @@ public class VisualizationFragment extends Fragment {
 
             void bind(SlotCellModel model) {
                 slotTitle.setText(model.label);
-                if (model.moving) {
+                
+                if (model.assignedPlate != null) {
+                    // App User's Vehicle explicitly stored in Room
+                    card.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.md_theme_primary));
+                    slotState.setText(model.assignedPlate);
+                    slotState.setTextColor(ContextCompat.getColor(requireContext(), R.color.md_theme_onPrimary));
+                } else if (model.moving) {
                     card.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tower_slot_bg_moving));
                     slotState.setText(R.string.tower_slot_state_moving);
                     slotState.setTextColor(ContextCompat.getColor(requireContext(), R.color.tower_slot_text_moving));

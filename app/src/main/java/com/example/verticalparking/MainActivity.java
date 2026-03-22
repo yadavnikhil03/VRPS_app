@@ -72,12 +72,18 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.nav_dashboard) {
                 selectedFragment = new DashboardFragment();
             } else if (id == R.id.nav_control) {
-                selectedFragment = new ControlFragment();
+                selectedFragment = new VisualizationFragment();
             } else if (id == R.id.nav_history) {
                 selectedFragment = new HistoryFragment();
             }
             
             if (selectedFragment != null) {
+                Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+                if (currentFragment != null) {
+                    currentFragment.setExitTransition(new com.google.android.material.transition.MaterialFadeThrough());
+                }
+                selectedFragment.setEnterTransition(new com.google.android.material.transition.MaterialFadeThrough());
+
                 getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_host_fragment, selectedFragment)
                     .commit();
@@ -86,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
-        // Set Default Fragment
-        binding.bottomNavigation.setSelectedItemId(R.id.nav_dashboard);
+        // Set Default Fragment only on first launch, allowing state restoration to keep us on Settings
+        if (getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment) == null) {
+            binding.bottomNavigation.setSelectedItemId(R.id.nav_dashboard);
+        }
 
         // Drawer Nav Setup
         binding.navView.setNavigationItemSelectedListener(item -> {
@@ -101,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
             }
             
             if (selectedFragment != null) {
+                Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+                if (currentFragment != null) {
+                    currentFragment.setExitTransition(new com.google.android.material.transition.MaterialFadeThrough());
+                }
+                selectedFragment.setEnterTransition(new com.google.android.material.transition.MaterialFadeThrough());
+
                 getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_host_fragment, selectedFragment)
                     .commit();
@@ -115,12 +129,7 @@ public class MainActivity extends AppCompatActivity {
             binding.drawerLayout.closeDrawer(GravityCompat.START);
         });
 
-        ImageView githubAvatar = binding.getRoot().findViewById(R.id.ivGithubAvatar);
-        Glide.with(this)
-                .load(getString(R.string.github_avatar_url))
-                .placeholder(R.drawable.ic_github)
-                .error(R.drawable.ic_github)
-            .into(githubAvatar);
+
     }
 
     @Override

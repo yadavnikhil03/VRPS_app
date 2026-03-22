@@ -248,9 +248,9 @@ public class SettingsFragment extends Fragment {
         int start = builder.length();
         builder.append(glyphs);
 
-        int primaryColor = ContextCompat.getColor(requireContext(), R.color.md_theme_light_primary);
-        int tertiaryColor = ContextCompat.getColor(requireContext(), R.color.md_theme_light_secondary);
-        int errorColor = ContextCompat.getColor(requireContext(), R.color.md_theme_light_error);
+        int primaryColor = ContextCompat.getColor(requireContext(), R.color.kinetic_primary);
+        int tertiaryColor = ContextCompat.getColor(requireContext(), R.color.kinetic_secondary);
+        int errorColor = ContextCompat.getColor(requireContext(), R.color.kinetic_error);
 
         for (int i = 0; i < glyphs.length(); i++) {
             char ch = glyphs.charAt(i);
