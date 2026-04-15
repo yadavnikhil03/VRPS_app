@@ -1,19 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
 <rect width="100%" height="100%" fill="#0f172a" rx="12"/>
 <text x="46" y="18" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Repo Commit Activity (Last 90 Days)</text>
-<text x="46" y="36" fill="#cbd5e1" opacity="0.75" font-family="Segoe UI, Arial, sans-serif" font-size="11">Total commits: 40 | Active days: 29</text>
+<text x="46" y="36" fill="#cbd5e1" opacity="0.75" font-family="Segoe UI, Arial, sans-serif" font-size="11">Total commits: 41 | Active days: 30</text>
 <line x1="46" y1="26" x2="960" y2="26" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="77" x2="960" y2="77" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="128" x2="960" y2="128" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="179" x2="960" y2="179" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="230" x2="960" y2="230" stroke="#334155" stroke-width="1" opacity="0.45"/>
-<rect x="626" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
-<rect x="656" y="150" width="8" height="80" fill="#14b8a6" rx="1"/>
-<rect x="666" y="28" width="8" height="202" fill="#14b8a6" rx="1"/>
+<rect x="616" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
+<rect x="646" y="150" width="8" height="80" fill="#14b8a6" rx="1"/>
+<rect x="656" y="28" width="8" height="202" fill="#14b8a6" rx="1"/>
+<rect x="666" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="676" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
-<rect x="686" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
+<rect x="686" y="69" width="8" height="161" fill="#14b8a6" rx="1"/>
 <rect x="696" y="69" width="8" height="161" fill="#14b8a6" rx="1"/>
-<rect x="706" y="69" width="8" height="161" fill="#14b8a6" rx="1"/>
+<rect x="706" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="716" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="726" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="736" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
@@ -37,49 +38,50 @@
 <rect x="916" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="926" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <text x="46" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Jan</text>
-<text x="216" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Feb</text>
-<text x="496" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Mar</text>
-<text x="806" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Apr</text>
+<text x="206" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Feb</text>
+<text x="486" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Mar</text>
+<text x="796" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Apr</text>
 <text x="46" y="268" fill="#cbd5e1" opacity="0.8" font-family="Segoe UI, Arial, sans-serif" font-size="10">Recent commits</text>
 <line x1="46" y1="276" x2="960" y2="276" stroke="#334155" stroke-width="1" opacity="0.5"/>
 <circle cx="46" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="69" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="92" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="116" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="139" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="163" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="186" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="210" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="233" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="256" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="280" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="303" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="327" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="350" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="374" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="397" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="420" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="444" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="467" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="491" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="514" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="538" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="561" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="585" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="608" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="631" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="655" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="678" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="702" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="725" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="749" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="772" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="795" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="819" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="842" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="866" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="889" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="913" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="936" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="959" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="68" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="91" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="114" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="137" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="160" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="183" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="205" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="228" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="251" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="274" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="297" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="320" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="343" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="365" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="388" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="411" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="434" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="457" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="480" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="503" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="525" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="548" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="571" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="594" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="617" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="640" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="662" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="685" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="708" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="731" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="754" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="777" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="800" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="822" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="845" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="868" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="891" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="914" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="937" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="960" cy="276" r="3" fill="#67e8f9"/>
 </svg>
