@@ -1,19 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
 <rect width="100%" height="100%" fill="#0f172a" rx="12"/>
 <text x="46" y="18" fill="#cbd5e1" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Repo Commit Activity (Last 90 Days)</text>
-<text x="46" y="36" fill="#cbd5e1" opacity="0.75" font-family="Segoe UI, Arial, sans-serif" font-size="11">Total commits: 63 | Active days: 52</text>
+<text x="46" y="36" fill="#cbd5e1" opacity="0.75" font-family="Segoe UI, Arial, sans-serif" font-size="11">Total commits: 64 | Active days: 53</text>
 <line x1="46" y1="26" x2="960" y2="26" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="77" x2="960" y2="77" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="128" x2="960" y2="128" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="179" x2="960" y2="179" stroke="#334155" stroke-width="1" opacity="0.45"/>
 <line x1="46" y1="230" x2="960" y2="230" stroke="#334155" stroke-width="1" opacity="0.45"/>
-<rect x="396" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
-<rect x="426" y="150" width="8" height="80" fill="#14b8a6" rx="1"/>
-<rect x="436" y="28" width="8" height="202" fill="#14b8a6" rx="1"/>
+<rect x="386" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
+<rect x="416" y="150" width="8" height="80" fill="#14b8a6" rx="1"/>
+<rect x="426" y="28" width="8" height="202" fill="#14b8a6" rx="1"/>
+<rect x="436" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="446" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
-<rect x="456" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
+<rect x="456" y="69" width="8" height="161" fill="#14b8a6" rx="1"/>
 <rect x="466" y="69" width="8" height="161" fill="#14b8a6" rx="1"/>
-<rect x="476" y="69" width="8" height="161" fill="#14b8a6" rx="1"/>
+<rect x="476" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="486" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="496" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="506" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
@@ -60,71 +61,72 @@
 <rect x="916" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <rect x="926" y="190" width="8" height="40" fill="#22d3ee" rx="1"/>
 <text x="46" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Feb</text>
-<text x="266" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Mar</text>
-<text x="576" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Apr</text>
-<text x="876" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">May</text>
+<text x="256" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Mar</text>
+<text x="566" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">Apr</text>
+<text x="866" y="256" fill="#cbd5e1" opacity="0.7" font-family="Segoe UI, Arial, sans-serif" font-size="10">May</text>
 <text x="46" y="268" fill="#cbd5e1" opacity="0.8" font-family="Segoe UI, Arial, sans-serif" font-size="10">Recent commits</text>
 <line x1="46" y1="276" x2="960" y2="276" stroke="#334155" stroke-width="1" opacity="0.5"/>
 <circle cx="46" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="60" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="75" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="90" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="89" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="104" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="119" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="134" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="149" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="163" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="178" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="193" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="208" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="222" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="237" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="252" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="267" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="281" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="296" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="311" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="326" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="340" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="355" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="370" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="385" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="399" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="414" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="429" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="444" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="458" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="473" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="488" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="503" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="517" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="532" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="547" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="561" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="576" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="591" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="606" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="620" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="635" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="650" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="665" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="679" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="694" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="709" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="724" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="738" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="753" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="768" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="783" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="797" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="812" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="827" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="842" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="856" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="871" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="886" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="118" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="133" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="147" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="162" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="176" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="191" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="205" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="220" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="234" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="249" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="263" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="278" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="292" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="307" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="321" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="336" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="350" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="365" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="379" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="394" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="408" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="423" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="437" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="452" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="466" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="481" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="495" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="510" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="524" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="539" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="553" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="568" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="582" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="597" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="611" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="626" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="640" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="655" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="669" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="684" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="698" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="713" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="727" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="742" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="756" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="771" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="785" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="800" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="814" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="829" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="843" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="858" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="872" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="887" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="901" cy="276" r="3" fill="#67e8f9"/>
-<circle cx="915" cy="276" r="3" fill="#67e8f9"/>
+<circle cx="916" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="930" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="945" cy="276" r="3" fill="#67e8f9"/>
 <circle cx="960" cy="276" r="3" fill="#67e8f9"/>
